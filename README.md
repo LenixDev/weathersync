@@ -1,39 +1,15 @@
-# qb-weathersync
-Synced weather and time for QB-Core Framework :sunrise:
-
-# License
-
-    QBCore Framework
-    Copyright (C) 2021 Joshua Eger
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>
-
+# trplr_weathersync
+Synced weather and time for Ovexetended Framework :sunrise:
 
 ## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
+- [ox_core]
+- [ox_lib]
 
 ## Features
 - Syncs the weather for all players
 
 ## Installation
-### Manual
-- Download the script and put it in the `[qb]` directory.
-- Add the following code to your server.cfg/resouces.cfg
-```
-ensure qb-core
-ensure qb-weathersync
-```
+- Drag and drop it to your resources directory
 
 ## Configuration
 You can adjust available weather and defaults in `config.lua`
@@ -67,11 +43,11 @@ to adjust weather patterns you need to modify nextWeatherStage() in `server/serv
 Triggers event to switch weather to next stage
 ```lua
 -- LUA EXAMPLE
-local success = exports["qb-weathersync"]:nextWeatherStage();
+local success = exports["trplr_weathersync"]:nextWeatherStage();
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const success = global.exports["qb-weathersync"].nextWeatherStage();
+const success = global.exports["trplr_weathersync"].nextWeatherStage();
 ```
 
 
@@ -79,11 +55,11 @@ const success = global.exports["qb-weathersync"].nextWeatherStage();
 Switch to a specified weather type from Config.AvailableWeatherTypes
 ```lua
 -- LUA EXAMPLE
-local success = exports["qb-weathersync"]:setWeather("snow");
+local success = exports["trplr_weathersync"]:setWeather("snow");
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const success = global.exports["qb-weathersync"].setWeather("snow");
+const success = global.exports["trplr_weathersync"].setWeather("snow");
 ```
 
 
@@ -91,11 +67,11 @@ const success = global.exports["qb-weathersync"].setWeather("snow");
 Sets sun position based on time to specified
 ```lua
 -- LUA EXAMPLE
-local success = exports["qb-weathersync"]:setTime(8, 10); -- 8:10 AM
+local success = exports["trplr_weathersync"]:setTime(8, 10); -- 8:10 AM
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const success = global.exports["qb-weathersync"].setTime(15, 30); // 3:30PM
+const success = global.exports["trplr_weathersync"].setTime(15, 30); // 3:30PM
 ```
 
 
@@ -103,11 +79,11 @@ const success = global.exports["qb-weathersync"].setTime(15, 30); // 3:30PM
 Sets or toggles blackout state and returns the state
 ```lua
 -- LUA EXAMPLE
-local newStatus = exports["qb-weathersync"]:setBlackout(); -- Toggle
+local newStatus = exports["trplr_weathersync"]:setBlackout(); -- Toggle
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const newStatus = global.exports["qb-weathersync"].setBlackout(true); // Enable
+const newStatus = global.exports["trplr_weathersync"].setBlackout(true); // Enable
 ```
 
 
@@ -115,11 +91,11 @@ const newStatus = global.exports["qb-weathersync"].setBlackout(true); // Enable
 Sets or toggles time freeze state and returns the state
 ```lua
 -- LUA EXAMPLE
-local newStatus = exports["qb-weathersync"]:setTimeFreeze(); -- Toggle
+local newStatus = exports["trplr_weathersync"]:setTimeFreeze(); -- Toggle
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const newStatus = global.exports["qb-weathersync"].setTimeFreeze(true); // Enable
+const newStatus = global.exports["trplr_weathersync"].setTimeFreeze(true); // Enable
 ```
 
 
@@ -127,11 +103,11 @@ const newStatus = global.exports["qb-weathersync"].setTimeFreeze(true); // Enabl
 Sets or toggles dynamic weather state and returns the state
 ```lua
 -- LUA EXAMPLE
-local newStatus = exports["qb-weathersync"]:setDynamicWeather(); -- Toggle
+local newStatus = exports["trplr_weathersync"]:setDynamicWeather(); -- Toggle
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const newStatus = global.exports["qb-weathersync"].setDynamicWeather(true); // Enable
+const newStatus = global.exports["trplr_weathersync"].setDynamicWeather(true); // Enable
 ```
 
 
@@ -139,11 +115,11 @@ const newStatus = global.exports["qb-weathersync"].setDynamicWeather(true); // E
 Returns if blackout is enabled or disabled
 ```lua
 -- LUA EXAMPLE
-local state = exports["qb-weathersync"]:getBlackoutState();
+local state = exports["trplr_weathersync"]:getBlackoutState();
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const state = global.exports["qb-weathersync"].getBlackoutState();
+const state = global.exports["trplr_weathersync"].getBlackoutState();
 ```
 
 
@@ -151,11 +127,11 @@ const state = global.exports["qb-weathersync"].getBlackoutState();
 Returns if time progression is enabled or disabled
 ```lua
 -- LUA EXAMPLE
-local state = exports["qb-weathersync"]:getTimeFreezeState();
+local state = exports["trplr_weathersync"]:getTimeFreezeState();
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const state = global.exports["qb-weathersync"].getTimeFreezeState();
+const state = global.exports["trplr_weathersync"].getTimeFreezeState();
 ```
 
 
@@ -163,11 +139,11 @@ const state = global.exports["qb-weathersync"].getTimeFreezeState();
 Returns the current weather type
 ```lua
 -- LUA EXAMPLE
-local currentWeather = exports["qb-weathersync"]:getWeatherState();
+local currentWeather = exports["trplr_weathersync"]:getWeatherState();
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const currentWeather = global.exports["qb-weathersync"].getWeatherState();
+const currentWeather = global.exports["trplr_weathersync"].getWeatherState();
 ```
 
 
@@ -175,26 +151,23 @@ const currentWeather = global.exports["qb-weathersync"].getWeatherState();
 Returns if time progression is enabled or disabled
 ```lua
 -- LUA EXAMPLE
-local state = exports["qb-weathersync"]:getDynamicWeather();
+local state = exports["trplr_weathersync"]:getDynamicWeather();
 ```
 ```js
 // JAVASCRIPT EXAMPLE
-const state = global.exports["qb-weathersync"].getDynamicWeather();
+const state = global.exports["trplr_weathersync"].getDynamicWeather();
 ```
-
 
 ## Events
 
+`trplr_weathersync:server:RequestStateSync` - Sync time and weather for everyone
 
-`qb-weathersync:server:RequestStateSync` - Sync time and weather for everyone
+`trplr_weathersync:server:setWeather` [type] - Set Weather type (List in Config)
 
-`qb-weathersync:server:setWeather` [type] - Set Weather type (List in Config)
+`trplr_weathersync:server:setTime` [hour] (minute) - Set simulated time
 
-`qb-weathersync:server:setTime` [hour] (minute) - Set simulated time
+`trplr_weathersync:server:toggleBlackout` (true|false) - Enable, disable or toggle blackout
 
-`qb-weathersync:server:toggleBlackout` (true|false) - Enable, disable or toggle blackout
+`trplr_weathersync:server:toggleFreezeTime` (true|false) (minute) - Enable, disable or toggle time progression
 
-`qb-weathersync:server:toggleFreezeTime` (true|false) (minute) - Enable, disable or toggle time progression
-
-`qb-weathersync:server:toggleDynamicWeather` (true|false) - Enable, disable or toggle dynamic weather
-
+`trplr_weathersync:server:toggleDynamicWeather` (true|false) - Enable, disable or toggle dynamic weather

@@ -1,16 +1,23 @@
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
-author 'Kakarot'
-description 'Syncs the time & weather for all players on the server and allows editing by command'
-version '2.1.1'
+author 'Lenix'
+description 'Syncs the time & weather for all players on the server and allows editing by command forked from qb-weathersync'
+version '1.1.1'
 
 shared_scripts {
     'config.lua',
-    '@qb-core/shared/locale.lua',
-    'locales/en.lua',
-    'locales/*.lua'
+    '@ox_lib/init.lua' -- OX library (if using ox_lib)
 }
 
 server_script 'server/server.lua'
 client_script 'client/client.lua'
+
+files {'locales/*.json'}
+
+ox_libs {'locale'}
+
+dependencies {
+    'ox_core',
+    'ox_lib'
+}

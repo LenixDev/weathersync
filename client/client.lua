@@ -7,17 +7,17 @@ local blackout = Config.Blackout
 local blackoutVehicle = Config.BlackoutVehicle
 local disable = Config.Disabled
 
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+RegisterNetEvent('ox:playerLoaded', function() 
     disable = false
-    TriggerServerEvent('qb-weathersync:server:RequestStateSync')
+    TriggerServerEvent('weathersync:server:RequestStateSync')
 end)
 
-RegisterNetEvent('qb-weathersync:client:EnableSync', function()
+RegisterNetEvent('weathersync:client:EnableSync', function()
     disable = false
-    TriggerServerEvent('qb-weathersync:server:RequestStateSync')
+    TriggerServerEvent('weathersync:server:RequestStateSync')
 end)
 
-RegisterNetEvent('qb-weathersync:client:DisableSync', function()
+RegisterNetEvent('weathersync:client:DisableSync', function()
     disable = true
     SetRainLevel(0.0)
     SetWeatherTypePersist('CLEAR')
@@ -26,12 +26,12 @@ RegisterNetEvent('qb-weathersync:client:DisableSync', function()
     NetworkOverrideClockTime(18, 0, 0)
 end)
 
-RegisterNetEvent('qb-weathersync:client:SyncWeather', function(NewWeather, newblackout)
+RegisterNetEvent('weathersync:client:SyncWeather', function(NewWeather, newblackout)
     CurrentWeather = NewWeather
     blackout = newblackout
 end)
 
-RegisterNetEvent('qb-weathersync:client:SyncTime', function(base, offset, freeze)
+RegisterNetEvent('weathersync:client:SyncTime', function(base, offset, freeze)
     freezeTime = freeze
     timeOffset = offset
     baseTime = base

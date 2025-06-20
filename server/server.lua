@@ -7,8 +7,8 @@ CreateThread(function()
    print("          |___/                                     ")
 end)
 
-if GetCurrentResourceName() ~= "trplr_vehiclekeys" then
-    return print("^6Changing the resource's name wont't let the resource start, ^1" .. GetCurrentResourceName() .. "^0 > ^2 trplr_vehiclekeys ^7")
+if GetCurrentResourceName() ~= "trplr_weathersync" then
+    return print("^6Changing the resource's name wont't let the resource start, ^1" .. GetCurrentResourceName() .. "^0 > ^2 trplr_weathersync ^7")
 end
 
 local CurrentWeather = Config.StartWeather

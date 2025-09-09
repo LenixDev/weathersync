@@ -1,4 +1,4 @@
-# trplr_weathersync
+# weathersync
 Synced weather and time for Ovexetended Framework :sunrise:
 
 ## Dependencies
